@@ -20,6 +20,26 @@ GitHub  --(push)--> Build in AWS CodeBuild linking via GitHub actions --(update)
 ## In AWS CodeBuild
 - Create a CodeBuild Project
 - Link the project with GitHub project. [Create a build project with GitHub](https://docs.aws.amazon.com/codebuild/latest/userguide/sample-github-pull-request.html) 
+- For the attached CodeBuild's IAM role add the following permissions inorder to update the respective Lambda:
+
+```json
+{
+    "Effect": "Allow",
+    "Action": [
+        "lambda:AddPermission",
+        "lambda:RemovePermission",
+        "lambda:CreateAlias",
+        "lambda:UpdateAlias",
+        "lambda:DeleteAlias",
+        "lambda:UpdateFunctionCode",
+        "lambda:UpdateFunctionConfiguration",
+        "lambda:PutFunctionConcurrency",
+        "lambda:DeleteFunctionConcurrency",
+        "lambda:PublishVersion"
+    ],
+    "Resource": "arn:aws:lambda:us-east-1:your-aws-account-number:function:your-lambda-function-name"
+}
+```
 
 ## Testing
 - Commit and push and changes to the main branch of the GitHub repo, AWS CodeBuild would be triggred and the linked Lambda function will be updated by 
