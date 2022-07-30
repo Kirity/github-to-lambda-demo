@@ -42,4 +42,4 @@ GitHub  --(push)--> Build in AWS CodeBuild linking via GitHub actions --(update)
 ```
 
 ## Testing
-- Commit and push and changes to the main branch of the GitHub repo, AWS CodeBuild would be triggred and the linked Lambda function will be updated by 
+- Commit and push the changes to the main branch of the GitHub repo, AWS CodeBuild would be triggred and the linked Lambda function will be updated by 
