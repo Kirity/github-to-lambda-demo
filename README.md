@@ -21,7 +21,7 @@ GitHub  --(push)--> Build in AWS CodeBuild linking via GitHub actions --(update)
 - Create a CodeBuild Project
 - Link the project with GitHub project. [Create a build project with GitHub](https://docs.aws.amazon.com/codebuild/latest/userguide/sample-github-pull-request.html) 
 - For the attached CodeBuild's IAM role add the following permissions inorder to update the respective Lambda:
-
+- (Path to the IAM role: CodeBuild Project --> Build details --> Environemnt --> Service role)
 ```json
 {
     "Effect": "Allow",
