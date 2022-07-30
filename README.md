@@ -21,3 +21,5 @@ GitHub  --(push)--> Build in AWS CodeBuild linking via GitHub actions --(update)
 - Create a CodeBuild Project
 - Link the project with GitHub project. [Create a build project with GitHub](https://docs.aws.amazon.com/codebuild/latest/userguide/sample-github-pull-request.html) 
 
+## Testing
+- Commit and push and changes to the main branch of the GitHub repo, AWS CodeBuild would be triggred and the linked Lambda function will be updated by 
